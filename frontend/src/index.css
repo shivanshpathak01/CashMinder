@@ -1,29 +1,191 @@
-@import url('https://fonts.googleapis.com/css2?family=Outfit:wght@100..900&family=Playfair+Display:ital,wght@0,400..900;1,400..900&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&family=Playfair+Display:ital,wght@0,400..900;1,400..900&display=swap');
 
-*{
+:root {
+  --primary-color: #FF4B4B; /* More vibrant red */
+  --secondary-color: #FFCC00; /* Richer yellow */
+  --accent-color: #4CD964; /* Brighter green */
+  --background-color: #FFF0E0; /* Warmer background */
+  --text-color: #2C2C2C; /* Darker text for better contrast */
+  --light-text: #FFFFFF; /* Pure white for better contrast */
+  --shadow: 0 8px 15px rgba(0, 0, 0, 0.1); /* More pronounced shadow */
+  --border-radius: 12px;
+  --transition: all 0.3s ease;
+  --gradient-primary: linear-gradient(135deg, #FF4B4B, #FF7676); /* Hot gradient */
+  --gradient-secondary: linear-gradient(135deg, #FFCC00, #FFE066); /* Warm gradient */
+  --food-accent: #FF8C42; /* Orange accent for food theme */
+  --food-accent-dark: #E67E22; /* Darker orange */
+}
+
+* {
   padding: 0;
   margin: 0;
   box-sizing: border-box;
-  font-family: Outfit;
+  font-family: 'Poppins', sans-serif;
   scroll-behavior: smooth;
 }
-body{
+
+body {
   min-height: 100vh;
+  background-color: var(--background-color);
+  color: var(--text-color);
 }
-a{
+
+a {
   text-decoration: none;
   color: inherit;
 }
-.app{
-  width: 80%;
+
+.app {
+  width: 90%;
+  max-width: 1400px;
   margin: auto;
+  padding: 20px 0;
 }
 
+/* Button Styles */
+.btn {
+  padding: 12px 24px;
+  border-radius: var(--border-radius);
+  border: none;
+  cursor: pointer;
+  font-weight: 600;
+  transition: var(--transition);
+  text-transform: uppercase;
+  letter-spacing: 0.5px;
+}
+
+.btn-primary {
+  background-color: var(--primary-color);
+  color: var(--light-text);
+}
+
+.btn-primary:hover {
+  background-color: #ff5252;
+  transform: translateY(-2px);
+}
+
+.btn-secondary {
+  background-color: var(--secondary-color);
+  color: var(--text-color);
+}
+
+.btn-secondary:hover {
+  background-color: #ffd000;
+  transform: translateY(-2px);
+}
+
+/* Card Styles */
+.card {
+  background: white;
+  border-radius: var(--border-radius);
+  box-shadow: var(--shadow);
+  padding: 20px;
+  transition: var(--transition);
+}
+
+.card:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 6px 12px rgba(0, 0, 0, 0.15);
+}
+
+/* Animations */
 @keyframes fadeIn {
-  0%{
+  0% {
     opacity: 0;
+    transform: translateY(20px);
   }
-  100%{
+  100% {
     opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+@keyframes pulse {
+  0% {
+    transform: scale(1);
+  }
+  50% {
+    transform: scale(1.05);
+  }
+  100% {
+    transform: scale(1);
+  }
+}
+
+@keyframes slideInLeft {
+  0% {
+    opacity: 0;
+    transform: translateX(-30px);
+  }
+  100% {
+    opacity: 1;
+    transform: translateX(0);
+  }
+}
+
+@keyframes slideInRight {
+  0% {
+    opacity: 0;
+    transform: translateX(30px);
+  }
+  100% {
+    opacity: 1;
+    transform: translateX(0);
+  }
+}
+
+@keyframes float {
+  0% {
+    transform: translateY(0px);
+  }
+  50% {
+    transform: translateY(-10px);
+  }
+  100% {
+    transform: translateY(0px);
+  }
+}
+
+@keyframes textGradient {
+  0% {
+    background-position: 0% 50%;
+  }
+  50% {
+    background-position: 100% 50%;
+  }
+  100% {
+    background-position: 0% 50%;
+  }
+}
+
+.fade-in {
+  animation: fadeIn 0.5s ease-out forwards;
+}
+
+.pulse {
+  animation: pulse 2s infinite ease-in-out;
+}
+
+.float {
+  animation: float 3s infinite ease-in-out;
+}
+
+.slide-left {
+  animation: slideInLeft 0.5s ease-out forwards;
+}
+
+.slide-right {
+  animation: slideInRight 0.5s ease-out forwards;
+}
+
+/* Responsive Design */
+@media (max-width: 768px) {
+  .app {
+    width: 95%;
+  }
+
+  .btn {
+    padding: 10px 20px;
+    font-size: 14px;
   }
 }
