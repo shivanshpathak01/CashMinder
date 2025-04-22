@@ -5,11 +5,12 @@
     gap: 20px;
     padding-top: 60px;
     flex-direction: column;
-    color: var(--light-text);
-    background: linear-gradient(135deg, #2C2C2C 0%, #3D3D3D 100%);
+    color: var(--footer-text);
+    background: var(--footer-bg);
     margin-top: 100px;
     position: relative;
     overflow: hidden;
+    transition: background 0.3s ease, color 0.3s ease;
 }
 
 .footer::before {

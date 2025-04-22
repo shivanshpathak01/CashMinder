@@ -1,5 +1,6 @@
 @import url('https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&family=Playfair+Display:ital,wght@0,400..900;1,400..900&display=swap');
 
+/* Light Mode (Default) */
 :root {
   --primary-color: #FF4B4B; /* More vibrant red */
   --secondary-color: #FFCC00; /* Richer yellow */
@@ -14,6 +15,33 @@
   --gradient-secondary: linear-gradient(135deg, #FFCC00, #FFE066); /* Warm gradient */
   --food-accent: #FF8C42; /* Orange accent for food theme */
   --food-accent-dark: #E67E22; /* Darker orange */
+  --card-bg: #FFFFFF;
+  --navbar-bg: #FFFFFF;
+  --footer-bg: linear-gradient(135deg, #2C2C2C 0%, #3D3D3D 100%);
+  --footer-text: #d9d9d9;
+  --input-bg: #FFFFFF;
+  --input-border: #d0d0d0;
+}
+
+/* Dark Mode */
+[data-theme='dark'] {
+  --primary-color: #FF5E5E; /* Brighter red for dark mode */
+  --secondary-color: #FFD700; /* Gold for dark mode */
+  --accent-color: #50E878; /* Brighter green for dark mode */
+  --background-color: #121212; /* Dark background */
+  --text-color: #F0F0F0; /* Light text for dark mode */
+  --light-text: #FFFFFF; /* Pure white text */
+  --shadow: 0 8px 15px rgba(0, 0, 0, 0.3); /* Darker shadow */
+  --gradient-primary: linear-gradient(135deg, #FF5E5E, #FF8A8A); /* Brighter gradient */
+  --gradient-secondary: linear-gradient(135deg, #FFD700, #FFEB7F); /* Brighter warm gradient */
+  --food-accent: #FF9F50; /* Brighter orange for dark mode */
+  --food-accent-dark: #FF8C42; /* Adjusted darker orange */
+  --card-bg: #1E1E1E; /* Dark card background */
+  --navbar-bg: #1A1A1A; /* Dark navbar */
+  --footer-bg: linear-gradient(135deg, #121212 0%, #1A1A1A 100%); /* Darker footer */
+  --footer-text: #CCCCCC; /* Lighter footer text */
+  --input-bg: #2C2C2C; /* Dark input background */
+  --input-border: #3D3D3D; /* Dark input border */
 }
 
 * {
@@ -28,6 +56,7 @@ body {
   min-height: 100vh;
   background-color: var(--background-color);
   color: var(--text-color);
+  transition: background-color 0.3s ease, color 0.3s ease;
 }
 
 a {
@@ -76,7 +105,7 @@ a {
 
 /* Card Styles */
 .card {
-  background: white;
+  background: var(--card-bg);
   border-radius: var(--border-radius);
   box-shadow: var(--shadow);
   padding: 20px;

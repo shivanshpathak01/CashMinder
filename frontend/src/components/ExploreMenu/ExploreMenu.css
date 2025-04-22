@@ -5,13 +5,14 @@
 }
 
 .explore-menu h1{
-    color: #262626;
+    color: var(--text-color);
     font-weight: 500;
 }
 
 .explore-menu-text{
     max-width: 60%;
-    color: #808080;
+    color: var(--text-color);
+    opacity: 0.7;
 }
 
 .explore-menu-list{
@@ -40,19 +41,22 @@
     margin-top: 0.8vw;
     font-size: max(1.4vw,16px);
     cursor: pointer;
-    color: #747474;
+    color: var(--text-color);
+    opacity: 0.8;
 }
 
 .explore-menu hr{
     border: none;
-    background-color: #e2e2e2;
+    background-color: var(--text-color);
+    opacity: 0.1;
     height: 2px;
     margin: 10px 0px;
 }
 
 .explore-menu-list .active{
-    border: 2px solid tomato;
+    border: 2px solid var(--primary-color);
     padding: 2px;
+    box-shadow: 0 0 10px rgba(255, 75, 75, 0.5);
 }
 
 @media (max-width:1050px) {

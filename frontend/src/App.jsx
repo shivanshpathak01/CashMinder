@@ -1,4 +1,4 @@
-import React, { useState } from 'react'
+import React, { useState, useEffect } from 'react'
 import Navbar from './components/Navbar/Navbar'
 import { Route, Routes } from 'react-router-dom'
 import Home from './pages/Home/Home'
@@ -11,6 +11,14 @@ import MyOrders from './pages/MyOrders/MyOrders'
 const App = () => {
 
   const [showLogin,setShowLogin] = useState(false)
+
+  // Initialize dark mode from localStorage on app load
+  useEffect(() => {
+    const savedTheme = localStorage.getItem('theme')
+    if (savedTheme === 'dark') {
+      document.documentElement.setAttribute('data-theme', 'dark')
+    }
+  }, [])
 
   return (
     <>
@@ -27,7 +35,7 @@ const App = () => {
     </div>
     <Footer />
     </>
-    
+
   )
 }
 
